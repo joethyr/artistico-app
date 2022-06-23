@@ -7,8 +7,8 @@
       </div>
       <% if user_signed_in? %>
         <div class="navbar-nav">
-          <a class="nav-link" href="#">Upload Picture</a>
-          <a class="nav-link" href="#">Log Out</a>
+          <%= link_to "Upload Picture", new_picture_path, class:"nav-link", id: "nav-link-color" %>
+          <%= link_to "Log Out", destroy_user_session_path, method: :delete, class:"nav-link", id: "nav-link-color" %>
         </div>
       <% else %>
         <div class="navbar-nav ">
