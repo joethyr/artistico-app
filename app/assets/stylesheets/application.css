@@ -13,6 +13,9 @@
  *= require_tree .
  *= require_self
  */
+html body {
+  background-color: #D4DFCF;
+}
 
 #nav-link-color {
   color: white;
