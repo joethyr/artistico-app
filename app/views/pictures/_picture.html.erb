@@ -4,13 +4,11 @@
     <%= image_tag picture.image, style: "width: 200px; display: block" %>
     <% end %>
   <p>
-    <strong>Title:</strong>
     <%= picture.title %>
   </p>
 
   <p>
-    <strong>Description:</strong>
-    <%= picture.description %>
+    <small>By <%= picture.user.name %></small>
   </p>
 
 <!--   <p>
