@@ -1,4 +1,8 @@
 <div id="<%= dom_id picture %>">
+
+  <% if picture.user_picture.attached? %>
+    <%= image_tag picture.user_picture, style: "width: 200px; display: block" %>
+    <% end %>
   <p>
     <strong>Title:</strong>
     <%= picture.title %>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_06_28_032433) do
+ActiveRecord::Schema[7.0].define(version: 2022_06_22_204441) do
   create_table "impressions", force: :cascade do |t|
     t.string "impressionable_type"
     t.integer "impressionable_id"
@@ -43,7 +43,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_06_28_032433) do
     t.integer "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "user_picture"
     t.index ["user_id"], name: "index_pictures_on_user_id"
   end
 
