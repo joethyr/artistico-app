@@ -1,3 +1,3 @@
 class Picture < ApplicationRecord
-  has_one_attached :user_picture
+  has_one_attached :image, dependent: :destroy
 end
