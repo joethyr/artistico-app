@@ -20,3 +20,16 @@ html body {
 #nav-link-color {
   color: white;
 }
+
+#drop_zone {
+  position: relative;
+  padding: 2rem 0;
+  border: 2px dashed grey;
+  text-align: center;
+  border-radius: 5px;
+  background-color: #DCE3D9;
+}
+
+#drop_zone:hover {
+    background-color: #C6CFC8;
+  }
