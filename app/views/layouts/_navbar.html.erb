@@ -8,10 +8,11 @@
      <div class="collapse navbar-collapse" id="navbarSupportedContent">
        <%= link_to "Pictures", root_path, class:"nav-link nav-item ms-3", id: "nav-link-color" %>
        <% if user_signed_in? %>
-         <div class="navbar-nav me-auto mb-2 mb-lg-0">
-           <%= link_to "Upload Picture", new_picture_path, class:"nav-link", id: "nav-link-color" %>
+         <div class="navbar-nav me-auto mb-2 mb-lg-0  ms-4">
+           <%= link_to "Upload Picture", new_picture_path, class:"btn btn-success", id: "nav-link-color" %>
          </div>
          <div class="navbar-nav">
+           <%= link_to "My Account", edit_user_registration_path, method: :delete, class:"nav-link", id: "nav-link-color" %>
            <%= link_to "Log Out", destroy_user_session_path, method: :delete, class:"nav-link", id: "nav-link-color" %>
          </div>
        <% else %>
