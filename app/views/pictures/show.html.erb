@@ -1,4 +1,19 @@
-<%= render @picture %>
+<div>
+
+    <%= image_tag @picture.image.variant(
+    saver: { quality: 30 }
+    ) %>
+  <p>
+    <%= @picture.title %>
+  </p>
+
+  <p>
+    <small>By <%= @picture.user.name %></small>
+  </p>
+
+
+</div>
+
 
 <div>
   <%= link_to "Edit this picture", edit_picture_path(@picture) %> |
