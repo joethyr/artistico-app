@@ -1,7 +1,7 @@
 <div id="pictures" class="d-inline-flex ">
   <% @pictures.each do |picture| %>
 
-  <div><%= link_to picture, class: "pictured" do %>
+  <div><%= link_to picture, class: "picture" do %>
     <%= image_tag picture.image.variant(resize_to_fit: [250, 250]), class: "rounded " %>
     <% end %>
 

@@ -1,16 +1,30 @@
-<div class="d-flex justify-content-center align-items-center align-content">
-  <%= image_tag @picture.image.variant(resize_to_limit: [900, 900]), class: "mt-4" %>
+<section class="content-item">
+        <div class="container">
+          <div class="row">
+              <div class="col-sm-8">
+                <%= image_tag @picture.image.variant(resize_to_limit: [818, nil]), class: "" %>
+                    <% if user_signed_in? %>
+                    <div class="box">
+                      <%= link_to "Edit this picture", edit_picture_path(@picture) %>
 
-  <div>
-    <h3>
-      <%= @picture.title %> <small>by <%= @picture.user.name %></small>
-    </h3>
-    <p><%= @picture.description%> </p>
-  <div>
-    <%= link_to "Edit this picture", edit_picture_path(@picture) %> |
-    <%= link_to "Back to pictures", pictures_path %>
+                      <%= button_to "Destroy this picture", @picture, method: :delete %>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                  <h1> <%= @picture.title %> <small>by <%= @picture.user.name %></small></h1>
+                    <% end %>
+                    <div class="box">
+                      <%= @picture.description%>
+                    </div>
+                    <div class="box">
+            <ul class="list-unstyled">
+                          <li><i class="fa fa-heart"></i>0 Likes</li>
+                            <li><i class="fa fa-eye"></i>0 Views</li>
+                            <li><i class="fa fa-comment"></i>0 Comments</li>
+                        </ul>
+                    </div>
 
-    <%= button_to "Destroy this picture", @picture, method: :delete %>
-  </div>
-  </div>
-</div>
+                </div>
+            </div>
+        </div>
+    </section>

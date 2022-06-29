@@ -39,6 +39,43 @@ i {
   flex-wrap: wrap;
 }
 
-.pictured {
+.picture {
   margin: 1rem;
+}
+
+.content-item {
+  padding: 1rem;
+  background-color:#C1CEC1;
+}
+
+.content-item h1 {
+  font-size:30px;
+  margin: 1rem 0;
+}
+
+.box {
+  background-color:#C8CFC2;
+  padding:10px 20px;
+  box-shadow:0 2px 2px 0 rgba(0,0,0,0.1);
+  margin-bottom: 1rem;
+}
+
+.box ul {
+  margin:0;
+}
+
+.box ul li {
+  font-size:13px;
+  border-bottom:1px dashed grey;
+  padding:10px 0;
+  font-weight:600;
+}
+
+.box ul li:last-child {
+  border-bottom:0;
+}
+
+.box ul li i {
+  font-size:18px;
+  margin-right: 1rem;
 }
