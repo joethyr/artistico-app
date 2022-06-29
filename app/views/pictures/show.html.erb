@@ -1,23 +1,16 @@
-<div>
+<div class="d-flex justify-content-center align-items-center">
+  <%= image_tag @picture.image.variant(resize_to_limit: [900, 900]), class: "mt-4" %>
 
-    <%= image_tag @picture.image.variant(
-    saver: { quality: 30 }
-    ) %>
-  <p>
-    <%= @picture.title %>
-  </p>
+  <div>
+    <h3>
+      <%= @picture.title %> <small>by <%= @picture.user.name %></small>
+    </h3>
+    <p><%= @picture.description%> </p>
+  <div>
+    <%= link_to "Edit this picture", edit_picture_path(@picture) %> |
+    <%= link_to "Back to pictures", pictures_path %>
 
-  <p>
-    <small>By <%= @picture.user.name %></small>
-  </p>
-
-
-</div>
-
-
-<div>
-  <%= link_to "Edit this picture", edit_picture_path(@picture) %> |
-  <%= link_to "Back to pictures", pictures_path %>
-
-  <%= button_to "Destroy this picture", @picture, method: :delete %>
+    <%= button_to "Destroy this picture", @picture, method: :delete %>
+  </div>
+  </div>
 </div>
