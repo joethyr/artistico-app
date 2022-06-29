@@ -1,22 +1,22 @@
 <div id="pictures" class="d-inline-flex ">
   <% @pictures.each do |picture| %>
 
-  <div><%= link_to picture, class: "picture mx-3" do %>
+  <div><%= link_to picture, class: "pictured" do %>
     <%= image_tag picture.image.variant(resize_to_fit: [250, 250]), class: "rounded " %>
     <% end %>
 
     <div class="d-flex justify-content-around">
       <%= link_to picture do %>
       <span class="icon"><i class="fa fa-eye"></i></span>
-      0
+      <span class="thumbnail-count">0</span>
       <% end %>
       <%= link_to picture do %>
       <span class="icon"><i class="fa fa-comment"></i></span>
-      0
+      <span class="thumbnail-count">0</span>
       <% end %>
       <%= link_to picture do %>
       <span class="icon"><i class="fa-solid fa-heart"></i></span>
-      <span class="vote_count">0</span>
+      <span class="thumbnail-count">0</span>
       <% end %>
     </div>
   </div>

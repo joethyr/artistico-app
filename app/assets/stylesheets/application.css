@@ -21,3 +21,24 @@ html body {
   color: white;
 }
 
+i {
+  cursor: default;
+  pointer-events: none;
+  text-decoration: none;
+  color: grey;
+}
+
+.thumbnail-count {
+
+  text-decoration: none;
+  color: grey;
+}
+
+#pictures {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.pictured {
+  margin: 1rem;
+}
