@@ -1,18 +1,19 @@
 <section class="content-item">
         <div class="container">
           <div class="row">
-              <div class="col-sm-8">
-                <%= image_tag @picture.image.variant(resize_to_limit: [818, nil]), class: "" %>
-                    <% if user_signed_in? %>
+              <div class="col col-sm-8">
+                <%= image_tag @picture.image.variant(resize_to_limit: [818, nil]), class: "img-fluid" %>
                     <div class="box">
                       <%= link_to "Edit this picture", edit_picture_path(@picture) %>
 
                       <%= button_to "Destroy this picture", @picture, method: :delete %>
                     </div>
                 </div>
-                <div class="col-sm-4">
-                  <h1> <%= @picture.title %> <small>by <%= @picture.user.name %></small></h1>
-                    <% end %>
+                <div class="col col-sm-4">
+                  <div class="content-title mb-2">
+                    <h1> <%= @picture.title %></h1>
+                    <h2><small>by <%= @picture.user.name %><br>posted <%= time_ago_in_words(@picture.created_at)%> ago</small></h2>
+                  </div>
                     <div class="box">
                       <%= @picture.description%>
                     </div>

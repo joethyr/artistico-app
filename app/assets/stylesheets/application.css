@@ -48,9 +48,16 @@ i {
   background-color:#C1CEC1;
 }
 
-.content-item h1 {
-  font-size:30px;
-  margin: 1rem 0;
+.content-title h1 {
+  font-size:36px;
+  margin: 0rem 0;
+}
+
+.content-title h2 {
+  font-size: 18px;
+  margin: 0;
+  font-weight: 400;
+
 }
 
 .box {

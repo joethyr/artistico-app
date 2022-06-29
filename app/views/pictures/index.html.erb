@@ -2,7 +2,7 @@
   <% @pictures.each do |picture| %>
 
   <div><%= link_to picture, class: "picture" do %>
-    <%= image_tag picture.image.variant(resize_to_fit: [250, 250]), class: "rounded " %>
+    <%= image_tag picture.image.variant(resize_to_fit: [250, 250]), class: "img-thumbnail " %>
     <% end %>
 
     <div class="d-flex justify-content-around">
