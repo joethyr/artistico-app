@@ -3,10 +3,10 @@
           <div class="row">
               <div class="col col-sm-8">
                 <%= image_tag @picture.image.variant(resize_to_limit: [818, nil]), class: "img-fluid" %>
-                    <div class="box">
-                      <%= link_to "Edit this picture", edit_picture_path(@picture) %>
+                    <div class="box d-flex gap-2">
+                      <small><%= link_to "Edit this picture", edit_picture_path(@picture), class: "btn btn-light shadow-sm" %></small>
 
-                      <%= button_to "Destroy this picture", @picture, method: :delete %>
+                      <small><%= button_to "Destroy this picture", @picture, method: :delete, class: "btn btn-light shadow-sm" %></small>
                     </div>
                 </div>
                 <div class="col col-sm-4">
