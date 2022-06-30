@@ -12,7 +12,16 @@
                 <div class="col col-sm-4">
                   <div class="content-title mb-2">
                     <h1> <%= @picture.title %></h1>
-                    <h2><small>by <%= @picture.user.name %><br>posted <%= time_ago_in_words(@picture.created_at)%> ago</small></h2>
+                    <h2 class="d-flex">
+                    <div class="me-2"><%= gravatar_image_tag(@picture.user.email, class: "avatar-small", alt: @picture.user.name) %>
+                    </div>
+                    <div class="mt-2">
+                      <small><%= @picture.user.name %></small>
+                      <br>
+                      <small>posted <%= time_ago_in_words(@picture.created_at)%> ago</small>
+                    </div>
+
+                    </h2>
                   </div>
                     <div class="box">
                       <%= @picture.description%>

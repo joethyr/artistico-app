@@ -86,3 +86,9 @@ i {
   font-size:18px;
   margin-right: 1rem;
 }
+
+.avatar-small {
+  border-radius: 50%;
+  width: 70px;
+  height: auto;
+}
