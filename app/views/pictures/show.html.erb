@@ -46,10 +46,7 @@
     </div>
     <div class="card-body" style="background-color: #D4DFCF;" >
       <% if user_signed_in? %>
-      <div class="comment-form">
-        <p>Add a Comment:</p>
         <%= render 'comments/form' %>
-      </div>
       <% else %>
       <div>To leave a comment, please <%= link_to 'Sign in.', new_user_session_path %></div>
       <% end %>
