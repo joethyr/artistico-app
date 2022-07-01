@@ -5,7 +5,7 @@
     <%= image_tag picture.image.variant(resize_to_fit: [250, 250]), class: "img-thumbnail " %>
     <% end %>
 
-    <div class="d-flex justify-content-around">
+    <div class="d-flex justify-content-around" id="index-all-pictures">
       <div class="view-thumbnail">
         <%= link_to picture do %>
         <span class="icon"><i class="fa fa-eye"></i></span>
@@ -24,21 +24,20 @@
           <% if current_user.liked? picture %>
             <%= link_to unlike_picture_path(picture), method: :put do %>
               <span class="icon"><i class="fa fa-heart" style="color: #E71021;"></i></span>
-              <span class="vote_count"><%= picture.get_likes.size %></span>
+              <span class="thumbnail-count"><%= picture.get_likes.size %></span>
             <% end %>
           <% else %>
             <%= link_to like_picture_path(picture), method: :put do %>
               <span class="icon"><i class="fa fa-heart"></i></span>
-              <span class="vote_count"><%= picture.get_likes.size %></span>
+              <span class="thumbnail-count"><%= picture.get_likes.size %></span>
             <% end %>
           <% end %>
         <% else %>
             <%= link_to like_picture_path(picture), method: :put do %>
               <span class="icon"><i class="fa fa-heart"></i></span>
-              <span class="vote_count"><%= picture.get_likes.size %></span>
+              <span class="thumbnail-count"><%= picture.get_likes.size %></span>
             <% end %>
         <% end %>
-
       </div>
     </div>
   </div>

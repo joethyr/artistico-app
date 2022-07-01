@@ -2,7 +2,6 @@ class PicturesController < ApplicationController
   before_action :set_picture, only: %i[ show edit update destroy like unlike]
   before_action :authenticate_user!, except: %i[ show index like unlike]
   impressionist actions: [:show], unique: [:impressionable_type, :impressionable_id, :session_hash]
-  impressionist actions: [:show]
 
 
   # GET /pictures or /pictures.json

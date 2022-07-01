@@ -100,6 +100,15 @@ i {
 
 .avatar-comment {
   border-radius: 50%;
-  width: 50px;
+  width: 55px;
   height: auto;
+}
+
+.show-icon-text {
+  text-decoration: none;
+  color: black;
+}
+
+#index-all-pictures a {
+  text-decoration: none;
 }

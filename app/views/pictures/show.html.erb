@@ -28,9 +28,30 @@
         </div>
         <div class="box">
           <ul class="list-unstyled">
-            <li><i class="fa fa-heart"></i>0 Likes</li>
-            <li><i class="fa fa-eye"></i><%= pluralize(@picture.impressionist_count, "View") %></li>
-            <li><i class="fa fa-comment"></i><%= pluralize(@picture.comments.count, "Comment") %></li>
+            <li>
+             <% if user_signed_in? %>
+
+                <% if current_user.liked? @picture %>
+                  <%= link_to unlike_picture_path(@picture), class: "show-icon-text", method: :put do %>
+                    <i class="fa fa-heart" style="color: #E71021;"></i><%= pluralize(@picture.get_likes.size, "Like") %>
+                  <% end %>
+                <% else %>
+                  <%= link_to like_picture_path(@picture), class: "show-icon-text", method: :put do %>
+                    <i class="fa fa-heart"></i><%= pluralize(@picture.get_likes.size, "Like") %>
+                  <% end %>
+                <% end %>
+              <% else %>
+                  <%= link_to like_picture_path(@picture), class: "show-icon-text", method: :put do %>
+                    <i class="fa fa-heart"></i><%= pluralize(@picture.get_likes.size, "Like") %>
+                  <% end %>
+              <% end %>
+            </li>
+            <li>
+              <i class="fa fa-eye"></i><%= pluralize(@picture.impressionist_count, "View") %>
+            </li>
+            <li>
+              <i class="fa fa-comment"></i><%= pluralize(@picture.comments.count, "Comment") %>
+            </li>
           </ul>
         </div>
 
