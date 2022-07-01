@@ -1,7 +1,7 @@
 <%= simple_form_for([@picture, @picture.comments.build]) do |f| %>
 
   <div class="mb-2">
-      <%= f.input :reply, label: false, input_html: { class: 'textarea', placeholder: "Add a comment...", rows: 5, style: "background-color: #FEFFFA"}, label_html: { class: 'form-label' } %>
+      <%= f.input :reply, label: false, input_html: { class: 'textarea', placeholder: "Add a comment...", rows: 4, style: "background-color: #FEFFFA"}, label_html: { class: 'form-label' } %>
   </div>
 
   <%= f.button :submit, class: 'btn btn-success' %>

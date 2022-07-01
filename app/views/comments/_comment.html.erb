@@ -1,9 +1,14 @@
-<div class="card">
-  <div class="card-body">
-    <%= gravatar_image_tag(@picture.user.email, class: "avatar-small", alt: @picture.user.name) %>
-    <div><%= comment.reply %></div>
-    <% if (user_signed_in? && (current_user.id == comment.user_id)) %>
-        <%= button_to "Destroy this picture", [comment.picture, comment], method: :delete, class: "btn btn-light shadow-sm" %>
-    <% end %>
+<div style="background-color: rgb(193,206,193)">
+<div class="d-flex card-body mx-5 my-3 rounded" style="background-color: rgb(218,228,217)">
+  <div class="flex-shrink-0">
+        <%= gravatar_image_tag(comment.user.email, class: "avatar-comment", alt: @picture.user.name) %>
+    </div>
+    <div class="flex-grow-1 ms-3">
+        <h5><small><%= comment.user.name %><i class="text-muted"> posted <%= time_ago_in_words(@picture.created_at)%> ago</i></small></h5>
+        <p><%= comment.reply %></p>
+    </div>
+      <% if (user_signed_in? && (current_user.id == comment.user_id)) %>
+        <%= button_to "Delete post", [comment.picture, comment], method: :delete, class: "btn btn-light shadow-sm" %>
+      <% end %>
   </div>
 </div>
