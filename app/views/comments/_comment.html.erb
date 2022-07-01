@@ -1,0 +1,8 @@
+<div class="content">
+  <p>
+    <div><%= comment.reply %></div>
+  </p>
+</div>
+<% if (user_signed_in? && (current_user.id == comment.user_id)) %>
+<small><%= button_to "Destroy this picture", [comment.picture, comment], method: :delete, class: "" %></small>
+<% end %>
