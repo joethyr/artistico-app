@@ -1,6 +1,6 @@
 class PicturesController < ApplicationController
   before_action :set_picture, only: %i[ show edit update destroy ]
-  before_action :authenticate_user!, except: [:index]
+  before_action :authenticate_user!, except: [:show, :index]
 
 
   # GET /pictures or /pictures.json
@@ -60,10 +60,6 @@ class PicturesController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_picture
-      @picture = Picture.find(params[:id])
-    end
 
     # Only allow a list of trusted parameters through.
     def picture_params
