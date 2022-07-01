@@ -6,19 +6,42 @@
     <% end %>
 
     <div class="d-flex justify-content-around">
-      <%= link_to picture do %>
-      <span class="icon"><i class="fa fa-eye"></i></span>
-      <span class="thumbnail-count"><%= picture.impressionist_count %></span>
-      <% end %>
-      <%= link_to picture do %>
-      <span class="icon"><i class="fa fa-comment"></i></span>
-      <span class="thumbnail-count"><%= picture.comments.count %></span>
-      <% end %>
-      <%= link_to picture do %>
-      <span class="icon"><i class="fa-solid fa-heart"></i></span>
-      <span class="thumbnail-count">0</span>
-      <% end %>
+      <div class="view-thumbnail">
+        <%= link_to picture do %>
+        <span class="icon"><i class="fa fa-eye"></i></span>
+        <span class="thumbnail-count"><%= picture.impressionist_count %></span>
+        <% end %>
+      </div>
+      <div class="comment-thumbnail">
+        <%= link_to picture do %>
+        <span class="icon"><i class="fa fa-comment"></i></span>
+        <span class="thumbnail-count"><%= picture.comments.count %></span>
+        <% end %>
+      </div>
+      <div class="like-thumbnail">
+       <% if user_signed_in? %>
+
+          <% if current_user.liked? picture %>
+            <%= link_to unlike_picture_path(picture), method: :put do %>
+              <span class="icon"><i class="fa fa-heart" style="color: #E71021;"></i></span>
+              <span class="vote_count"><%= picture.get_likes.size %></span>
+            <% end %>
+          <% else %>
+            <%= link_to like_picture_path(picture), method: :put do %>
+              <span class="icon"><i class="fa fa-heart"></i></span>
+              <span class="vote_count"><%= picture.get_likes.size %></span>
+            <% end %>
+          <% end %>
+        <% else %>
+            <%= link_to like_picture_path(picture), method: :put do %>
+              <span class="icon"><i class="fa fa-heart"></i></span>
+              <span class="vote_count"><%= picture.get_likes.size %></span>
+            <% end %>
+        <% end %>
+
+      </div>
     </div>
   </div>
   <% end %>
 </div>
+

@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
   resources :pictures do
     resources :comments
+    member do
+      get 'like', to: 'pictures#like'
+      get 'unlike', to: 'pictures#unlike'
+    end
   end
   devise_for :users, controllers: {
     registrations: 'registrations'

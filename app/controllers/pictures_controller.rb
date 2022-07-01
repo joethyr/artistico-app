@@ -1,6 +1,6 @@
 class PicturesController < ApplicationController
-  before_action :set_picture, only: %i[ show edit update destroy ]
-  before_action :authenticate_user!, except: [:show, :index]
+  before_action :set_picture, only: %i[ show edit update destroy like unlike]
+  before_action :authenticate_user!, except: %i[ show index like unlike]
   impressionist actions: [:show], unique: [:impressionable_type, :impressionable_id, :session_hash]
   impressionist actions: [:show]
 
@@ -58,6 +58,22 @@ class PicturesController < ApplicationController
     respond_to do |format|
       format.html { redirect_to pictures_url, notice: "Picture was successfully destroyed." }
       format.json { head :no_content }
+    end
+  end
+
+  def like
+    @picture.liked_by current_user
+    respond_to do |format|
+      format.html { redirect_back fallback_location: root_path }
+      format.json { render layout:false }
+    end
+  end
+
+  def unlike
+    @picture.unliked_by current_user
+    respond_to do |format|
+      format.html { redirect_back fallback_location: root_path }
+      format.json { render layout:false }
     end
   end
 
