@@ -30,7 +30,7 @@
           <ul class="list-unstyled">
             <li><i class="fa fa-heart"></i>0 Likes</li>
             <li><i class="fa fa-eye"></i>0 Views</li>
-            <li><i class="fa fa-comment"></i>0 Comments</li>
+            <li><i class="fa fa-comment"></i><%= pluralize(@picture.comments.count, "Comment") %></li>
           </ul>
         </div>
 

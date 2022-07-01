@@ -12,7 +12,7 @@
       <% end %>
       <%= link_to picture do %>
       <span class="icon"><i class="fa fa-comment"></i></span>
-      <span class="thumbnail-count">0</span>
+      <span class="thumbnail-count"><%= picture.comments.count %></span>
       <% end %>
       <%= link_to picture do %>
       <span class="icon"><i class="fa-solid fa-heart"></i></span>
