@@ -40,10 +40,15 @@
 </section>
 
 <section>
+
+</section>
+
+<section>
   <div class="card my-4">
     <div class="card-header" id="comment-card-header">
       <h2>Comments</h2>
     </div>
+    <%= render @picture.comments %>
     <div class="card-body" style="background-color: #D4DFCF;" >
       <% if user_signed_in? %>
         <%= render 'comments/form' %>
@@ -51,7 +56,6 @@
       <div>To leave a comment, please <%= link_to 'Sign in.', new_user_session_path %></div>
       <% end %>
       <hr />
-      <%= render @picture.comments %>
     </div>
   </div>
 </section>

@@ -1,8 +1,9 @@
-<div class="content">
-  <p>
+<div class="card">
+  <div class="card-body">
+    <%= gravatar_image_tag(@picture.user.email, class: "avatar-small", alt: @picture.user.name) %>
     <div><%= comment.reply %></div>
-  </p>
+    <% if (user_signed_in? && (current_user.id == comment.user_id)) %>
+        <%= button_to "Destroy this picture", [comment.picture, comment], method: :delete, class: "btn btn-light shadow-sm" %>
+    <% end %>
+  </div>
 </div>
-<% if (user_signed_in? && (current_user.id == comment.user_id)) %>
-<small><%= button_to "Destroy this picture", [comment.picture, comment], method: :delete, class: "" %></small>
-<% end %>

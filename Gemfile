@@ -10,6 +10,8 @@ gem 'impressionist', '~> 2.0'
 gem 'gravatar_image_tag', '~> 1.2'
 gem 'acts_as_votable'
 gem 'devise'
+gem "bulma-rails", "~> 0.9.3"
+
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.0.3"
