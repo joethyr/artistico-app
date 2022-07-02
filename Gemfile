@@ -10,6 +10,7 @@ gem 'impressionist', '~> 2.0'
 gem 'gravatar_image_tag', '~> 1.2'
 gem 'acts_as_votable'
 gem 'devise'
+gem 'cancancan'
 
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"

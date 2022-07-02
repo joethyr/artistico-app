@@ -4,7 +4,7 @@ class CommentsController < ApplicationController
   def create
     set_user_picture
     @comment = @picture.comments.create(comment_params)
-    @comment.user_id = current_user.id if current_user
+    @comment.user_id = current_user.id
     @comment.save!
 
     respond_to do |format|

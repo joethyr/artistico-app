@@ -7,7 +7,7 @@
         <h5><small><%= comment.user.name %><i class="text-muted"> posted <%= time_ago_in_words(comment.created_at)%> ago</i></small></h5>
         <p><%= comment.reply %></p>
     </div>
-      <% if (user_signed_in? && (current_user.id == comment.user_id)) %>
+      <% if can? :update, comment %>
         <%= button_to "Delete post", [comment.picture, comment], method: :delete, class: "btn btn-light shadow-sm" %>
       <% end %>
   </div>
