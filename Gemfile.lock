@@ -194,6 +194,7 @@ GEM
       nenv (~> 0.1)
       shellany (~> 0.0)
     orm_adapter (0.5.0)
+    pg (1.4.1)
     pry (0.14.1)
       coderay (~> 1.1)
       method_source (~> 1.0)
@@ -321,12 +322,13 @@ DEPENDENCIES
   impressionist (~> 2.0)
   jbuilder
   mini_magick (~> 4.11)
+  pg
   puma (~> 5.0)
   rails (~> 7.0.3)
   selenium-webdriver
   simple_form (~> 5.1)
   sprockets-rails
-  sqlite3 (~> 1.4)
+  sqlite3
   stimulus-rails
   turbo-rails
   tzinfo-data
