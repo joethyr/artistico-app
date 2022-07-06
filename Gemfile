@@ -11,10 +11,7 @@ gem 'gravatar_image_tag', '~> 1.2'
 gem 'acts_as_votable'
 gem 'devise'
 gem 'cancancan'
-
-gem 'cloudinary'
-gem "figaro"
-
+gem 'aws-sdk-s3', require: false
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.0.3"
