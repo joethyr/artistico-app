@@ -2,53 +2,54 @@
   <div class="container">
     <div class="row">
       <div class="col col-sm-8">
-        <%= image_tag polymorphic_url(@picture.image.variant(resize_to_limit: [818, nil]).processed, only_path: true), class: "img-fluid" %>
-      <% if can? :update, @picture %>
-        <div class="box d-flex gap-2">
-          <small><%= link_to "Edit this picture", edit_picture_path(@picture), class: "btn btn-light shadow-sm" %></small>
+        <div class="d-flex flex-column">
+          <%= image_tag polymorphic_url(@picture.image.variant(resize_to_limit: [818, nil]).processed, only_path: true), class: "img-fluid" %>
+          <% if can? :update, @picture %>
+          <div class="box d-flex gap-2">
+            <small><%= link_to "Edit this picture", edit_picture_path(@picture), class: "btn btn-light shadow-sm" %></small>
 
-          <small><%= button_to "Destroy this picture", @picture, method: :delete, class: "btn btn-light shadow-sm" %></small>
-        </div>
-      <% end %>
-      </div>
-      <div class="col col-sm-4">
-        <div class="content-title mb-2">
-          <h1> <%= @picture.title %></h1>
-          <div class="d-flex">
-            <div class="me-2"><%= gravatar_image_tag(@picture.user.email, class: "avatar-small", alt: @picture.user.name) %>
-            </div>
-            <div class="mt-2">
-              <small><%= @picture.user.name %></small>
-              <br>
-              <small>posted <%= time_ago_in_words(@picture.created_at)%> ago</small>
-            </div>
-
+            <small><%= button_to "Destroy this picture", @picture, method: :delete, class: "btn btn-light shadow-sm" %></small>
           </div>
+          <% end %></div>
         </div>
-        <div class="box">
-          <%= @picture.description%>
-        </div>
-        <div class="box">
-          <ul class="list-unstyled">
-            <li>
-             <% if user_signed_in? %>
+        <div class="col col-sm-4">
+          <div class="content-title mb-2">
+            <h1> <%= @picture.title %></h1>
+            <div class="d-flex">
+              <div class="me-2"><%= gravatar_image_tag(@picture.user.email, class: "avatar-small", alt: @picture.user.name) %>
+              </div>
+              <div class="mt-2">
+                <small><%= @picture.user.name %></small>
+                <br>
+                <small>posted <%= time_ago_in_words(@picture.created_at)%> ago</small>
+              </div>
 
-                <% if current_user.liked? @picture %>
-                  <%= link_to unlike_picture_path(@picture), class: "show-icon-text", method: :put do %>
-                    <i class="fa fa-heart" style="color: #E71021;"></i><%= pluralize(@picture.get_likes.size, "Like") %>
-                  <% end %>
-                <% else %>
-                  <%= link_to like_picture_path(@picture), class: "show-icon-text", method: :put do %>
-                    <i class="fa fa-heart"></i><%= pluralize(@picture.get_likes.size, "Like") %>
-                  <% end %>
-                <% end %>
-              <% else %>
-                  <%= link_to like_picture_path(@picture), class: "show-icon-text", method: :put do %>
-                    <i class="fa fa-heart"></i><%= pluralize(@picture.get_likes.size, "Like") %>
-                  <% end %>
-              <% end %>
-            </li>
-            <li>
+            </div>
+          </div>
+          <div class="box">
+            <%= @picture.description%>
+          </div>
+          <div class="box">
+            <ul class="list-unstyled">
+              <li>
+               <% if user_signed_in? %>
+
+               <% if current_user.liked? @picture %>
+               <%= link_to unlike_picture_path(@picture), class: "show-icon-text", method: :put do %>
+               <i class="fa fa-heart" style="color: #E71021;"></i><%= pluralize(@picture.get_likes.size, "Like") %>
+               <% end %>
+               <% else %>
+               <%= link_to like_picture_path(@picture), class: "show-icon-text", method: :put do %>
+               <i class="fa fa-heart"></i><%= pluralize(@picture.get_likes.size, "Like") %>
+               <% end %>
+               <% end %>
+               <% else %>
+               <%= link_to like_picture_path(@picture), class: "show-icon-text", method: :put do %>
+               <i class="fa fa-heart"></i><%= pluralize(@picture.get_likes.size, "Like") %>
+               <% end %>
+               <% end %>
+             </li>
+             <li>
               <i class="fa fa-eye"></i><%= pluralize(@picture.impressionist_count, "View") %>
             </li>
             <li>
@@ -74,7 +75,7 @@
     <%= render @picture.comments %>
     <div class="card-body" style="background-color: rgb(193,206,193);" >
       <% if user_signed_in? %>
-        <%= render 'comments/form' %>
+      <%= render 'comments/form' %>
       <% else %>
       <div>To leave a comment, please <%= link_to 'Sign in.', new_user_session_path %></div>
       <% end %>
