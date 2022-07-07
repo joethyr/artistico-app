@@ -1,8 +1,9 @@
+
 # Artistico
+A Rails image sharing app where users can upload their pictures.
 
-## A Rails application where users can upload images with a title and description. The app permits comments and displaying views and likes analytics.
-
-Check the Gemfile for dependencies.
+## Description
+Rails application where users can upload images with a title and description. The app permits comments and displaying views and likes analytics.
 
 ## Getting Started
 
